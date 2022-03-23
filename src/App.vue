@@ -58,7 +58,10 @@ export default {
     },
     copyText() {
       const value = window.getSelection().toString();
-      setTimeout(() => {
+     
+
+      if(window.innerWidth < 760) {
+         setTimeout(() => {
         window.getSelection().removeAllRanges();
         navigator.clipboard.writeText(value);
         const toast = useToast();
@@ -66,6 +69,14 @@ export default {
           timeout: 2000,
         });
       }, 1000);
+      }else{
+        window.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(value);
+        const toast = useToast();
+        toast.success("Text coppied", {
+          timeout: 2000,
+        });
+      }
     },
   },
   computed: {
