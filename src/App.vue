@@ -65,7 +65,7 @@ export default {
         toast.success("Text coppied", {
           timeout: 2000,
         });
-      }, 500);
+      }, 1000);
     },
   },
   computed: {
