@@ -102,8 +102,10 @@ export default {
 .main .output {
   width: 100%;
   max-width: 50%;
-  height: 100%;
+  
   padding: 1rem;
+   min-height: 100vh;
+  height: auto;
 }
 
 .main .output p {
@@ -117,6 +119,9 @@ export default {
   flex-direction: row;
   gap: 25px;
   padding: 1rem 0;
+  background: white;
+  position: sticky;
+  top: 0;
 }
 
 
