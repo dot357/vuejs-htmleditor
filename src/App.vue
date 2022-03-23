@@ -95,6 +95,8 @@ export default {
   max-width: 50%;
   height: 100%;
   border-right: 3px solid;
+   min-height: 100vh;
+  height: auto;
 }
 
 .main .output {

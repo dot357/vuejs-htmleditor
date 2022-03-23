@@ -58,6 +58,7 @@ export default {
 .tiptap {
 
   padding: 2rem 1rem;
+ 
 }
 
 
