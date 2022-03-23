@@ -87,7 +87,7 @@ export default {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .main .editor {
