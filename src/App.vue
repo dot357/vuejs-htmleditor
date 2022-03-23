@@ -21,7 +21,8 @@
         </button>
       </div>
       <Transition>
-        <d v-if="show.output">{{ output }}</d>
+        
+        <div v-if="show.output">{{ output }}</div>
       </Transition>
       <Transition>
         <div v-if="!show.output" v-html="output"></div>

@@ -1,5 +1,6 @@
 <template>
   <div class="tiptap">
+   
     <div class="controls">
         <div class="topLayer">
           <button class="control-element" @click="editor.commands.toggleBold()"><strong>Bold</strong></button>
@@ -16,7 +17,9 @@
     </div>
     <editor-content
       @input="this.$emit('text-input', editor.getHTML())"
-      :editor="editor"
+      @mouseleave="this.$emit('text-input', editor.getHTML())"
+      @mouseenter="this.$emit('text-input', editor.getHTML())"
+      :editor="editor" 
     />
   </div>
 </template>
@@ -24,12 +27,13 @@
 <script>
 import { Editor, EditorContent } from "@tiptap/vue-3";
 import StarterKit from "@tiptap/starter-kit";
+import TextAlign from '@tiptap/extension-text-align'
 import '../../titapGeneralStyling.css'
 
 export default {
   data() {
     return {
-      editor: null,
+      editor: null
     };
   },
   components: {
@@ -38,7 +42,7 @@ export default {
   mounted() {
     this.editor = new Editor({
       content: `<p>You can enter your content here. Developed by <strong><a href="https:github.com/dot357">dot357</a></strong> 🎉</p>`,
-      extensions: [StarterKit],
+      extensions: [StarterKit,TextAlign],
     });
   },
   beforeUnmount() {
