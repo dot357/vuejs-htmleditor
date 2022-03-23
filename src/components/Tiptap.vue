@@ -19,6 +19,8 @@
       @input="this.$emit('text-input', editor.getHTML())"
       @mouseleave="this.$emit('text-input', editor.getHTML())"
       @mouseenter="this.$emit('text-input', editor.getHTML())"
+      @keyup.ctrl="this.$emit('text-input', editor.getHTML())"
+      
       :editor="editor" 
     />
   </div>
