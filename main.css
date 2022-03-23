@@ -64,3 +64,9 @@ button {
   }
 
 
+
+
+  ::selection {
+	color: white;
+	background-color: black;
+  }
