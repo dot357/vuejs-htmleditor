@@ -54,7 +54,9 @@ export default {
     },
     copyText(){
       const value = window.getSelection().toString()
-      window.getSelection().removeAllRanges()
+      setTimeout(() => {
+        window.getSelection().removeAllRanges()
+      },500)
       navigator.clipboard.writeText(value);
       const toast = useToast();
       toast.success("Text coppied", {
