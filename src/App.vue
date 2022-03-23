@@ -22,7 +22,7 @@
       </div>
       <Transition>
         
-        <div v-if="show.output">{{ output }}</div>
+        <textarea v-if="show.output" @select="copyText()" :value="output" disabled> </textarea>
       </Transition>
       <Transition>
         <div v-if="!show.output" v-html="output"></div>
@@ -33,6 +33,7 @@
 
 <script>
 import Tiptap from "./components/Tiptap.vue";
+import { useToast } from "vue-toastification";
 
 export default {
   data() {
@@ -45,11 +46,22 @@ export default {
   },
   components: {
     Tiptap,
+
   },
   methods: {
     someEvent($event) {
       this.dataOutput = $event;
     },
+    copyText(){
+      const value = window.getSelection().toString()
+      window.getSelection().removeAllRanges()
+      navigator.clipboard.writeText(value);
+      const toast = useToast();
+      toast.success("Text coppied", {
+        timeout: 2000
+      });
+
+    }
   },
   computed: {
     output: {
@@ -123,6 +135,18 @@ export default {
   background: white;
   position: sticky;
   top: 0;
+}
+textarea,textarea:disabled{
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+  outline: none;
+  border: none;
+  color: black;
+  background: white;
+  font-family: 'Barlow', sans-serif;
+  font-size: 1rem;
+
 }
 
 

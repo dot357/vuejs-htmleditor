@@ -18,6 +18,8 @@
     "@tiptap/starter-kit": "^2.0.0-beta.183",
     "@tiptap/vue-3": "^2.0.0-beta.90",
     "vue": "^3.2.25",
+    "vue-toast-notification": "3.0",
+    "vue-toastification": "^2.0.0-rc.5",
     "y-webrtc": "^10.2.2",
     "y-websocket": "^1.4.0",
     "yjs": "^13.5.30"
