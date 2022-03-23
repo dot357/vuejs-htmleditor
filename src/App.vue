@@ -21,8 +21,13 @@
         </button>
       </div>
       <Transition>
-        
-        <textarea v-if="show.output" @select="copyText()" :value="output" disabled> </textarea>
+        <textarea
+          v-if="show.output"
+          @select="copyText()"
+          :value="output"
+          disabled
+        >
+        </textarea>
       </Transition>
       <Transition>
         <div v-if="!show.output" v-html="output"></div>
@@ -46,24 +51,22 @@ export default {
   },
   components: {
     Tiptap,
-
   },
   methods: {
     someEvent($event) {
       this.dataOutput = $event;
     },
-    copyText(){
-      const value = window.getSelection().toString()
+    copyText() {
+      const value = window.getSelection().toString();
       setTimeout(() => {
-        window.getSelection().removeAllRanges()
-      },500)
-      navigator.clipboard.writeText(value);
-      const toast = useToast();
-      toast.success("Text coppied", {
-        timeout: 2000
-      });
-
-    }
+        window.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(value);
+        const toast = useToast();
+        toast.success("Text coppied", {
+          timeout: 2000,
+        });
+      }, 500);
+    },
   },
   computed: {
     output: {
@@ -84,9 +87,8 @@ export default {
 .v-enter-active,
 .v-leave-active {
   transition: opacity 0.5s ease;
-  
 }
-.v-enter-active{
+.v-enter-active {
   transition-delay: 0.23s;
 }
 
@@ -110,16 +112,16 @@ export default {
   max-width: 50%;
   height: 100%;
   border-right: 3px solid;
-   min-height: 100vh;
+  min-height: 100vh;
   height: auto;
 }
 
 .main .output {
   width: 100%;
   max-width: 50%;
-  
+
   padding: 1rem;
-   min-height: 100vh;
+  min-height: 100vh;
   height: auto;
 }
 
@@ -138,7 +140,8 @@ export default {
   position: sticky;
   top: 0;
 }
-textarea,textarea:disabled{
+textarea,
+textarea:disabled {
   width: 100%;
   height: 100%;
   min-height: 50vh;
@@ -146,13 +149,10 @@ textarea,textarea:disabled{
   border: none;
   color: black;
   background: white;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   font-size: 1rem;
   resize: none;
-
 }
-
-
 
 .view {
   border: 1px solid black;
@@ -169,16 +169,14 @@ button.active {
   color: white;
 }
 
-
 @media only screen and (max-width: 760px) {
-.main{
-  flex-direction: column;
-}
+  .main {
+    flex-direction: column;
+  }
 
-.main .editor{
-  width: 100%;
-  max-width: 100%;
-}
-
+  .main .editor {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 </style>
