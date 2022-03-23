@@ -146,6 +146,7 @@ textarea,textarea:disabled{
   background: white;
   font-family: 'Barlow', sans-serif;
   font-size: 1rem;
+  resize: none;
 
 }
 
