@@ -141,4 +141,17 @@ button.active {
   background: black;
   color: white;
 }
+
+
+@media only screen and (max-width: 760px) {
+.main{
+  flex-direction: column;
+}
+
+.main .editor{
+  width: 100%;
+  max-width: 100%;
+}
+
+}
 </style>

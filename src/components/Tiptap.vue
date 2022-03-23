@@ -101,4 +101,14 @@ export default {
     color: white;
 }
 
+@media only screen and (max-width: 760px) {
+.tiptap {
+  width: 100%;
+  padding: 1rem;
+}
+
+
+
+}
+
 </style>
